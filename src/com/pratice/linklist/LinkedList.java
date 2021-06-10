@@ -63,8 +63,8 @@ public class LinkedList {
 		for (int i = 0; i < index - 1; i++) {
 			node =  node.next;
 		}
-		temp = node.next;
-		node.next = temp.next;
+		//temp = node.next;
+		node.next = node.next.next;
 		
 	}
 }
