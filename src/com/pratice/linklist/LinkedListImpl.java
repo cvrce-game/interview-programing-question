@@ -10,12 +10,15 @@ public class LinkedListImpl {
 		System.out.println("***After Insert****");
 		list.traverse();
 		System.out.println("*******");
+		System.out.println("***After Reverse traverse****");
+		list.reverseTraverse();
+		System.out.println("*******");
 		System.out.println("***After Insert At first****");
 		list.insertAtFirste(13);
 		list.traverse();
 		System.out.println("*******");
 		System.out.println("***After Insert At Middle****");
-		list.insertAtMiddle(0,111);
+		list.insertAtMiddle(0, 111);
 		list.traverse();
 		System.out.println("*******");
 		System.out.println("***After Delete At First****");

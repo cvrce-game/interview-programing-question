@@ -61,10 +61,25 @@ public class LinkedList {
 
 		Node temp = null;
 		for (int i = 0; i < index - 1; i++) {
-			node =  node.next;
+			node = node.next;
 		}
-		//temp = node.next;
+		// temp = node.next;
 		node.next = node.next.next;
-		
+
 	}
+
+	public void reverseTraverse()
+    {
+        Node prev = null;
+        Node current = head;
+        Node next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
+        traverse();
+    }
 }

@@ -10,7 +10,7 @@ public class FindPair {
 		// Find all the pair of elements from given array which having sum equal or
 		// greater than given number
 
-		int[] arr = { 4, 3, 6, 5, 8, 2, 1, 9, 20, 7, 6, 5 };
+		int[] arr = {4, 3, 6, 5, 8, 2, 1, 9, 20, 7, 6, 5};
 		int sum = 8;
 		findPair(arr,sum);
 	}
