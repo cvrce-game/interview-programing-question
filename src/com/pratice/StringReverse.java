@@ -2,11 +2,11 @@ package com.pratice;
 
 public class StringReverse {
 	public static void main(String[] args) {
-//		String str = "i am good";
-//		System.out.println(reverse(str));
+		String str = "i am good";
+		System.out.println(reverse(str));
 
 		String str2 = "welcome to ey";
-		reverse2(str2);
+		System.out.println(reverseStrWithoutSpace(str2));
 	}
 
 	public static String reverse(String sf) {
@@ -19,24 +19,30 @@ public class StringReverse {
 		return new String(ch);
 	}
 
-	public static String reverse2(String sf) {
-		String[] spltArr = sf.split(" ");
-		int count = 0;
-		char[] ch = new char[sf.length()];
-		for (int i = 0; i < sf.length(); i++) {
-			if ((i == (spltArr[0].length() + 2)) || (i == ((spltArr[0].length() + 1) + (spltArr[1].length() + 1)))
-					|| (i == ((spltArr[0].length() + 2) + (spltArr[1].length() + 2) + (spltArr[2].length() + 2)))) {
-				ch[count] = ' ';
-				count++;
-			}
-			if (sf.charAt((sf.length() - 1) - i) == ' ') {
-				continue;
+	private static String reverseStrWithoutSpace(String str) {
+		char[] arr = str.toCharArray();
+		char[] outputArr = new char[str.length()];
+
+		int i = 0;
+		int j = str.length() - 1;
+
+		while (i < str.length() && j > 0) {
+			if (arr[j] != ' ') {
+				outputArr[j] = arr[i];
 			} else {
-				ch[count] = sf.charAt((sf.length() - 1) - i);
-				count++;
+				j--;
+				continue;
 			}
+
+			if (arr[i] != ' ') {
+				outputArr[i] = arr[j];
+			} else {
+				i++;
+				continue;
+			}
+			i++;
+			j--;
 		}
-		System.out.println(new String(ch));
-		return null;
+		return new String(outputArr);
 	}
 }
